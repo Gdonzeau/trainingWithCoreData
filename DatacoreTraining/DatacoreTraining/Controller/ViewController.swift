@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var personCoreData = Person(context: AppDelegate.viewContext)
+    //var personCoreData = Person(context: AppDelegate.viewContext)
     var personUsable = Data()
     var persons = [Person]()
     var infoView: UIView!
@@ -37,6 +37,7 @@ class ViewController: UIViewController {
         loadPersons()
     }
     private func checking() {
+        let personCoreData = Person(context: AppDelegate.viewContext) // Ajout
         persons = personCoreData.loadPersons()
         print("Il y a \(persons.count) personnes.")
         for object in persons {
@@ -65,9 +66,10 @@ class ViewController: UIViewController {
         textView.text = people
     }
     private func addPerson(personUsable:Data) { // Création d'un objet CoreData
-        
+        let personCoreData = Person(context: AppDelegate.viewContext) // Ajout
         personCoreData.name = personUsable.name
-        personCoreData.savePerson()
+        try? AppDelegate.viewContext.save()
+        //personCoreData.savePerson()
         
         /*
         do { // Action qu'on fait
@@ -79,7 +81,7 @@ class ViewController: UIViewController {
         */
     }
     private func loadPersons() {
-        //let person = Person(context: AppDelegate.viewContext)
+        let personCoreData = Person(context: AppDelegate.viewContext)
         let result = personCoreData.loadPersons()
         textView.text = ""
         var allPeople = ""

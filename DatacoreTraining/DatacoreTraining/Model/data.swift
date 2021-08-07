@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Data {
+class Data { // Ici Data mais ça pourrait être Recipe ;)
     var name:String = "" {
         didSet {
             configureTextView()
