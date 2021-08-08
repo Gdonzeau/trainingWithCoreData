@@ -31,6 +31,7 @@ class ViewController: UIViewController {
         
     }
     @IBAction func delData(_ sender: UIButton) {
+        deletePerson()
     }
     
     @IBAction func loadData(_ sender: UIButton) {
@@ -64,6 +65,24 @@ class ViewController: UIViewController {
         }
         people += newPerson + "\n"
         textView.text = people
+    }
+    private func deletePerson() {
+        let personCoreData = Person(context: AppDelegate.viewContext)
+        /*
+        if let name = dataTextField.text {
+            personCoreData.name = name
+        }
+        */
+        let persons = personCoreData.loadPersons()
+        for object in persons {
+            if let name = object.name {
+            print(name)
+                personCoreData.deleteAll(person: object)
+                print("On efface")
+            }
+        }
+        _ = personCoreData.loadPersons()
+        //personCoreData.deleteAll(person: personCoreData)
     }
     private func addPerson(personUsable:Data) { // Création d'un objet CoreData
         let personCoreData = Person(context: AppDelegate.viewContext) // Ajout

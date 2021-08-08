@@ -27,7 +27,7 @@ class Person: NSManagedObject {
             let response = try AppDelegate.viewContext.fetch(request) // response = total des données du CoreData
             for index in 0 ..< response.count { // On convertit les 
                 if let nom = response[index].name {
-            print(nom)
+                    print(nom)
                     answer.append(response[index])
                 }
             }
@@ -39,11 +39,7 @@ class Person: NSManagedObject {
         }
     }
     func deleteAll(person: Person) {
-        let persons = Person.loadPersons(self)
-        for object in persons() {
-            if object == person {
-                AppDelegate.viewContext.delete(object)
-            }
-        }
+        AppDelegate.viewContext.delete(person)
+        try? AppDelegate.viewContext.save()
     }
 }
