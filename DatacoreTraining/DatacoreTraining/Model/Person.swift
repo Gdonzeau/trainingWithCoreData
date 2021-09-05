@@ -46,4 +46,8 @@ class Person: NSManagedObject {
     func ajoutePourGit() {
         // Rien du tout
     }
+    
+    func deuxiemeFuncAjoute() {
+        
+    }
 }
