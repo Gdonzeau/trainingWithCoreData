@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0409D9A626C31E6800C5BD00 /* RecipeCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409D9A526C31E6800C5BD00 /* RecipeCoreDataManager.swift */; };
 		04902E2C26BADB8900318D4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04902E2B26BADB8900318D4C /* AppDelegate.swift */; };
 		04902E2E26BADB8900318D4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04902E2D26BADB8900318D4C /* SceneDelegate.swift */; };
 		04902E3026BADB8900318D4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04902E2F26BADB8900318D4C /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0409D9A526C31E6800C5BD00 /* RecipeCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCoreDataManager.swift; sourceTree = "<group>"; };
 		04902E2826BADB8900318D4C /* DatacoreTraining.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatacoreTraining.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04902E2B26BADB8900318D4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04902E2D26BADB8900318D4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0409D9A426C31E5000C5BD00 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0409D9A526C31E6800C5BD00 /* RecipeCoreDataManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		04902E1F26BADB8900318D4C = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +74,7 @@
 		04902E2A26BADB8900318D4C /* DatacoreTraining */ = {
 			isa = PBXGroup;
 			children = (
+				0409D9A426C31E5000C5BD00 /* Services */,
 				04902E4526BADBC300318D4C /* Model */,
 				04902E4726BADBD100318D4C /* Controller */,
 				04902E4626BADBCB00318D4C /* View */,
@@ -185,6 +196,7 @@
 				04902E4B26BAE40600318D4C /* Person.swift in Sources */,
 				04902E4E26BB066C00318D4C /* data.swift in Sources */,
 				04902E3626BADB8900318D4C /* DatacoreTraining.xcdatamodeld in Sources */,
+				0409D9A626C31E6800C5BD00 /* RecipeCoreDataManager.swift in Sources */,
 				04902E3026BADB8900318D4C /* ViewController.swift in Sources */,
 				04902E2C26BADB8900318D4C /* AppDelegate.swift in Sources */,
 				04902E2E26BADB8900318D4C /* SceneDelegate.swift in Sources */,

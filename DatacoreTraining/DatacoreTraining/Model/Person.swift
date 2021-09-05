@@ -25,7 +25,7 @@ class Person: NSManagedObject {
         do {
             print("Ok")
             let response = try AppDelegate.viewContext.fetch(request) // response = total des données du CoreData
-            for index in 0 ..< response.count { // On convertit les 
+            for index in 0 ..< response.count { // On convertit les réponses du CoreData
                 if let nom = response[index].name {
                     print(nom)
                     answer.append(response[index])

@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     //var personCoreData = Person(context: AppDelegate.viewContext)
     var personUsable = Data()
-    var persons = [Person]()
+    var persons = [Person]() // Pour vérif au démarrage seulement
     var infoView: UIView!
     @IBOutlet weak var dataTextField: UITextField!
     @IBOutlet weak var textView: UITextView!
@@ -74,11 +74,14 @@ class ViewController: UIViewController {
         }
         */
         let persons = personCoreData.loadPersons()
+        let nameToDelete = dataTextField.text
         for object in persons {
             if let name = object.name {
             print(name)
+                if name == nameToDelete {
                 personCoreData.deleteAll(person: object)
                 print("On efface")
+                }
             }
         }
         _ = personCoreData.loadPersons()
@@ -87,8 +90,8 @@ class ViewController: UIViewController {
     private func addPerson(personUsable:Data) { // Création d'un objet CoreData
         let personCoreData = Person(context: AppDelegate.viewContext) // Ajout
         personCoreData.name = personUsable.name
-        try? AppDelegate.viewContext.save()
-        //personCoreData.savePerson()
+        //try? AppDelegate.viewContext.save()
+        personCoreData.savePerson()
         
         /*
         do { // Action qu'on fait
