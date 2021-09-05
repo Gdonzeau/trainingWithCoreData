@@ -42,4 +42,8 @@ class Person: NSManagedObject {
         AppDelegate.viewContext.delete(person)
         try? AppDelegate.viewContext.save()
     }
+    
+    func ajoutePourGit() {
+        // Rien du tout
+    }
 }
